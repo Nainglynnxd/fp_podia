@@ -1,0 +1,39 @@
+:root {
+  --bg-color: #f5efeb;
+  --button-bg: #4b2aad;
+  --white: #ffffff;
+  --white-shade: #fdfbf9;
+  --white-shade-2: #f5efeb;
+  --light-purple: #9484c6;
+  --dark-purple: #201445;
+}
+
+html {
+  font-family: "tiempos", Georgia, "Times New Roman", Times, serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+picture,
+video,
+svg {
+  max-width: 100%;
+  display: block;
+}
