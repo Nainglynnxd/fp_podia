@@ -1,11 +1,14 @@
 :root {
-  --bg-color: #f5efeb;
+  --bg-color: hsl(30, 60%, 98%);
   --button-bg: #4b2aad;
   --white: #ffffff;
   --white-shade: #fdfbf9;
   --white-shade-2: #f5efeb;
   --light-purple: #9484c6;
   --dark-purple: #201445;
+  --text-color: #1a1715;
+  --font-headline: "tiempos headline";
+  --paragraph-text-color: #5c5856;
 }
 
 html {
@@ -14,8 +17,16 @@ html {
 }
 
 body {
+  position: relative;
+  text-rendering: optimizeSpeed;
   background-color: var(--bg-color);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
 }
 
 * {
@@ -36,4 +47,299 @@ video,
 svg {
   max-width: 100%;
   display: block;
+}
+
+/* end of css global initial resets */
+
+body > * {
+  padding: 0 2rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  background-color: var(--bg-color);
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+}
+
+.box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 0.0555556rem 0px,
+    rgba(0, 0, 0, 0.12) 0px 0.111111rem 0.222222rem;
+}
+
+@media screen and (min-width: 768px) {
+  body > * {
+    padding: 0 6rem;
+  }
+}
+
+.podia-logo {
+  width: 7vmax;
+  color: var(--button-bg);
+  margin-right: auto;
+}
+
+nav {
+  & a {
+    color: var(--text-color);
+    font-family: "Inter";
+    font-size: 1.05rem;
+    margin-left: 1rem;
+    padding: 0.25rem 1rem;
+  }
+}
+
+main {
+  flex: 1;
+}
+
+section {
+  margin: 2rem 0;
+}
+
+.hero-img {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 3rem 0;
+}
+
+.text-digital {
+  color: #9c8881;
+  font-family: "Inter";
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.2rem;
+}
+
+.section-header {
+  margin: 1rem 0;
+  font-size: 2.25rem;
+}
+
+.section-paragraph {
+  font-family: "Inter";
+  line-height: 1.8;
+  font-size: 1.2rem;
+  color: #5c5856;
+}
+
+.sign-up {
+  margin: 1rem 0;
+  background-color: var(--button-bg);
+  font-weight: bold;
+  color: #fff;
+  font-family: "Inter";
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #351e7a;
+  }
+}
+
+.podia-offer {
+  text-align: center;
+  margin: 4rem 0.7rem;
+
+  & h2 {
+    font-size: 1.7rem;
+    font-family: var(--font-headline);
+    line-height: 1.65;
+  }
+
+  & p {
+    line-height: 1.8;
+    color: var(--paragraph-text-color);
+    font-size: 1.2rem;
+    font-family: "Inter";
+  }
+}
+
+.podia-services {
+  margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  & .article-header {
+    font-size: 1.2rem;
+    margin: 0.8rem 0;
+  }
+
+  & .article-disc {
+    font-size: 0.875rem;
+  }
+
+  & .icon {
+    display: inline-block;
+    background-color: rgb(242, 235, 229);
+    color: rgb(137, 117, 109);
+    padding: 0.6rem;
+    border-radius: 50%;
+  }
+
+  & i {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .podia-services {
+    flex-direction: row;
+  }
+}
+
+.podia-sell {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 100%;
+
+  & h2 {
+    font-family: var(--font-headline);
+    font-size: 2rem;
+    margin: 1.3rem 0;
+  }
+
+  & p {
+    margin: 0 auto;
+    color: var(--paragraph-text-color);
+    font-size: 1.2rem;
+    font-family: "Inter";
+    line-height: 1.8;
+  }
+}
+
+@media screen and (min-width: 54rem) {
+  .podia-sell {
+    max-width: 80%;
+  }
+}
+
+.online-courses {
+  display: flex;
+  gap: 5rem;
+
+  & article {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  & h2 {
+    font-family: var(--font-headline);
+    font-size: 1.85rem;
+    line-height: 1.7;
+  }
+
+  & .courses-desc {
+    line-height: 1.8;
+    font-family: "Inter";
+    font-size: 1.2rem;
+    color: var(--paragraph-text-color);
+  }
+
+  & a {
+    font-family: "Inter";
+    font-weight: bold;
+    color: var(--button-bg);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+
+    & i {
+      font-size: 1.25rem;
+      font-weight: bold;
+      transform: rotate(180deg);
+      margin-left: 0.5rem;
+      transition: all 0.3s ease-in;
+    }
+
+    &:hover > i {
+      margin-left: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .online-courses {
+    flex-direction: column;
+  }
+}
+
+.feedback {
+  margin: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
+  & figure {
+    display: block;
+    max-width: 100%;
+  }
+
+  & .feedback-desc {
+    max-width: 75%;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.3rem;
+  }
+
+  & .feedback-subtext {
+    font-family: "Inter";
+    color: var(--paragraph-text-color);
+  }
+}
+
+@media screen and (max-width: 50rem) {
+  & .feedback-desc {
+    max-width: 100%;
+  }
+}
+
+.join-podia {
+  background-color: var(--dark-purple);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-radius: 0.5rem;
+  margin-bottom: 6rem;
+
+  & h2 {
+    font-size: 2rem;
+  }
+
+  & p {
+    color: #d7d2e8;
+    font-family: "Inter";
+    font-size: 1.1rem;
+  }
+
+  & button {
+    border: none;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    font-family: "Inter";
+    color: #fff;
+    background-color: var(--light-purple);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--button-bg);
+    }
+  }
 }
