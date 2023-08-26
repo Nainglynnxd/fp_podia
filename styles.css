@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "tiempos";
+  src: url(/Users/nainglynn/Downloads/MyFonts/Tiempos-Font/TiemposHeadline-Regular.otf);
+  font-family: "tiempos headline";
+  src: url(/Users/nainglynn/Downloads/MyFonts/Tiempos-Font/TiemposHeadline-Bold.otf);
+}
+
 :root {
   --bg-color: hsl(30, 60%, 98%);
   --button-bg: #4b2aad;
@@ -7,19 +14,19 @@
   --light-purple: #9484c6;
   --dark-purple: #201445;
   --text-color: #1a1715;
-  --font-headline: "tiempos headline";
+  --font-headline: tiempos headline;
   --paragraph-text-color: #5c5856;
 }
 
 html {
-  font-family: "tiempos", Georgia, "Times New Roman", Times, serif;
+  font-family: tiempos, Georgia, "Times New Roman", Times, serif;
   box-sizing: border-box;
 }
 
 body {
   position: relative;
   text-rendering: optimizeSpeed;
-  background-color: var(--bg-color);
+  background-color: var(--white-shade);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -85,7 +92,7 @@ header {
 nav {
   & a {
     color: var(--text-color);
-    font-family: "Inter";
+    font-family: Inter;
     font-size: 1.05rem;
     margin-left: 1rem;
     padding: 0.25rem 1rem;
@@ -108,7 +115,7 @@ section {
 
 .text-digital {
   color: #9c8881;
-  font-family: "Inter";
+  font-family: Inter;
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.2rem;
@@ -120,7 +127,7 @@ section {
 }
 
 .section-paragraph {
-  font-family: "Inter";
+  font-family: Inter;
   line-height: 1.8;
   font-size: 1.2rem;
   color: #5c5856;
@@ -131,7 +138,7 @@ section {
   background-color: var(--button-bg);
   font-weight: bold;
   color: #fff;
-  font-family: "Inter";
+  font-family: Inter;
   font-size: 1.1rem;
   padding: 1rem 1.5rem;
   border-radius: 2rem;
@@ -157,7 +164,7 @@ section {
     line-height: 1.8;
     color: var(--paragraph-text-color);
     font-size: 1.2rem;
-    font-family: "Inter";
+    font-family: Inter;
   }
 }
 
@@ -173,7 +180,8 @@ section {
   }
 
   & .article-disc {
-    font-size: 0.875rem;
+    font-size: 0.95rem;
+    color: var(--paragraph-text-color);
   }
 
   & .icon {
@@ -210,7 +218,7 @@ section {
     margin: 0 auto;
     color: var(--paragraph-text-color);
     font-size: 1.2rem;
-    font-family: "Inter";
+    font-family: Inter;
     line-height: 1.8;
   }
 }
@@ -235,18 +243,18 @@ section {
   & h2 {
     font-family: var(--font-headline);
     font-size: 1.85rem;
-    line-height: 1.7;
+    line-height: 1.2;
   }
 
   & .courses-desc {
     line-height: 1.8;
-    font-family: "Inter";
+    font-family: Inter;
     font-size: 1.2rem;
     color: var(--paragraph-text-color);
   }
 
   & a {
-    font-family: "Inter";
+    font-family: Inter;
     font-weight: bold;
     color: var(--button-bg);
     font-size: 1rem;
@@ -294,7 +302,8 @@ section {
   }
 
   & .feedback-subtext {
-    font-family: "Inter";
+    text-align: center;
+    font-family: Inter;
     color: var(--paragraph-text-color);
   }
 }
@@ -314,7 +323,7 @@ section {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem 0;
+  padding: 2rem 3rem;
   border-radius: 0.5rem;
   margin-bottom: 6rem;
 
@@ -324,8 +333,9 @@ section {
 
   & p {
     color: #d7d2e8;
-    font-family: "Inter";
+    font-family: Inter;
     font-size: 1.1rem;
+    line-height: 1.8;
   }
 
   & button {
@@ -333,13 +343,63 @@ section {
     padding: 1rem;
     border-radius: 2rem;
     font-weight: bold;
-    font-family: "Inter";
+    font-family: Inter;
     color: #fff;
     background-color: var(--light-purple);
     cursor: pointer;
 
     &:hover {
       background-color: var(--button-bg);
+    }
+  }
+}
+
+/* min-width breakpoint 1024 */
+
+footer {
+  padding-top: 6rem;
+  background: var(--white-shade-2);
+  font-family: Inter;
+  font-size: 1.1rem;
+
+  & div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  & button {
+    border: none;
+    background: none;
+    font-family: var(--font-headline);
+    font-size: 1.2rem;
+  }
+
+  & ul {
+    color: var(--paragraph-text-color);
+    display: flex;
+    list-style: none;
+    margin-left: 1rem;
+    gap: 1rem;
+  }
+
+  & a {
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--button-bg);
+    }
+  }
+
+  & .terms {
+    margin: 3rem 0;
+    color: var(--paragraph-text-color);
+    font-size: 0.875rem;
+
+    & a {
+      margin-left: 1rem;
     }
   }
 }
