@@ -1,8 +1,12 @@
 @font-face {
   font-family: "tiempos";
-  src: url(/Users/nainglynn/Downloads/MyFonts/Tiempos-Font/TiemposHeadline-Regular.otf);
+  src: url("./assets/Tiempos-Font/TiemposHeadline-Regular.otf")
+    format("opentype");
+}
+
+@font-face {
   font-family: "tiempos headline";
-  src: url(/Users/nainglynn/Downloads/MyFonts/Tiempos-Font/TiemposHeadline-Bold.otf);
+  src: url("./assets/Tiempos-Font/TiemposHeadline-Medium.otf");
 }
 
 :root {
@@ -14,7 +18,7 @@
   --light-purple: #9484c6;
   --dark-purple: #201445;
   --text-color: #1a1715;
-  --font-headline: tiempos headline;
+  --font-headline: "tiempos headline";
   --paragraph-text-color: #5c5856;
 }
 
@@ -59,7 +63,7 @@ svg {
 /* end of css global initial resets */
 
 body > * {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 header {
@@ -67,20 +71,22 @@ header {
   align-items: center;
   height: 10vh;
   background-color: var(--bg-color);
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   position: sticky;
   top: 0;
-}
-
-.box-shadow {
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 0.0555556rem 0px,
-    rgba(0, 0, 0, 0.12) 0px 0.111111rem 0.222222rem;
+  transition: box-shadow 200ms cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 @media screen and (min-width: 768px) {
   body > * {
     padding: 0 6rem;
   }
+}
+
+header.active {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 0.0555556rem 0px,
+    rgba(0, 0, 0, 0.12) 0px 0.111111rem 0.222222rem;
+  transition-duration: 400ms;
 }
 
 .podia-logo {
@@ -153,14 +159,19 @@ section {
 .podia-offer {
   text-align: center;
   margin: 4rem 0.7rem;
+  max-width: 100%;
 
   & h2 {
-    font-size: 1.7rem;
+    /* max-width: 80%; */
+    margin: 0 auto;
+    font-size: 2.125rem;
     font-family: var(--font-headline);
     line-height: 1.65;
   }
 
   & p {
+    /* max-width: 80%; */
+    margin: 0 auto;
     line-height: 1.8;
     color: var(--paragraph-text-color);
     font-size: 1.2rem;
@@ -168,11 +179,37 @@ section {
   }
 }
 
+@media screen and (max-width: 70.625rem) {
+  .podia-offer > h2,
+  p {
+    max-width: 100%;
+  }
+}
+
 .podia-services {
+  width: 100%;
   margin: 5rem 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  & > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & .icon {
+    display: inline-block;
+    background-color: rgb(242, 235, 229);
+    color: rgb(137, 117, 109);
+    padding: 0.6rem;
+    border-radius: 50%;
+  }
+
+  & i {
+    font-size: 1.6rem;
+  }
 
   & .article-header {
     font-size: 1.2rem;
@@ -200,6 +237,7 @@ section {
 @media screen and (min-width: 48rem) {
   .podia-services {
     flex-direction: row;
+    align-items: flex-start;
   }
 }
 
@@ -394,7 +432,7 @@ footer {
   }
 
   & .terms {
-    margin: 3rem 0;
+    margin: 5rem 0;
     color: var(--paragraph-text-color);
     font-size: 0.875rem;
 
