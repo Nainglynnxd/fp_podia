@@ -66,6 +66,16 @@ footers.map(
           .join(" ")}
       </ul>
     </div>
+    <ul class="list-dropdown">
+      ${item.links
+        .map(
+          (link) =>
+            `<li>
+              <a href="">${link}</a>
+            </li>`
+        )
+        .join(" ")}
+    </ul>
   `)
 );
 

@@ -399,12 +399,15 @@ footer {
   font-size: 1.1rem;
 
   & div {
+    position: relative;
     display: flex;
     margin-bottom: 2rem;
     align-items: center;
   }
 
   & button {
+    display: flex;
+    align-items: center;
     border: none;
     background: none;
     font-family: var(--font-headline);
@@ -434,10 +437,16 @@ footer {
     text-decoration: underline;
     text-underline-position: under;
     cursor: pointer;
+    color: var(--paragraph-text-color);
 
     &:hover {
       color: var(--button-bg);
     }
+  }
+
+  & .list-dropdown {
+    display: none;
+    visibility: hidden;
   }
 
   & .terms {
@@ -458,6 +467,11 @@ footer {
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      font-family: tiempos;
+    }
+
+    & div:not(:last-child) {
+      margin-bottom: 1.5rem;
     }
 
     & i {
@@ -469,8 +483,23 @@ footer {
       transform: rotate(180deg);
     }
 
-    & ul {
+    & .lists {
       display: none;
+    }
+
+    & li {
+      margin-bottom: 1rem;
+    }
+
+    & :has(button.clicked) + .list-dropdown {
+      margin-left: 0;
+      display: flex;
+      visibility: visible;
+      flex-direction: column;
+
+      & li:last-child {
+        margin-bottom: 1rem;
+      }
     }
   }
 }
