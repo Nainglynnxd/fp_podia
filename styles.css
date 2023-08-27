@@ -392,8 +392,6 @@ section {
   }
 }
 
-/* min-width breakpoint 1024 */
-
 footer {
   padding-top: 6rem;
   background: var(--white-shade-2);
@@ -402,8 +400,8 @@ footer {
 
   & div {
     display: flex;
-    align-items: center;
     margin-bottom: 2rem;
+    align-items: center;
   }
 
   & button {
@@ -411,13 +409,24 @@ footer {
     background: none;
     font-family: var(--font-headline);
     font-size: 1.2rem;
+    font-family: Inter;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  & i {
+    display: none;
+    visibility: hidden;
+    font-size: 2rem;
+    transition: all 0.4s ease-in;
+    cursor: pointer;
   }
 
   & ul {
     color: var(--paragraph-text-color);
     display: flex;
     list-style: none;
-    margin-left: 1rem;
+    margin-left: 1.2rem;
     gap: 1rem;
   }
 
@@ -438,6 +447,30 @@ footer {
 
     & a {
       margin-left: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  footer {
+    & button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    & i {
+      display: block;
+      visibility: visible;
+    }
+
+    & button.clicked i {
+      transform: rotate(180deg);
+    }
+
+    & ul {
+      display: none;
     }
   }
 }

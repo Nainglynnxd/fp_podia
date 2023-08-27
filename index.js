@@ -49,21 +49,23 @@ footers = [
 const footer = document.getElementById("footer");
 
 footers.map(
-  (item) =>
+  (item, index) =>
     (footer.innerHTML += `
-  <div>
-    <button>${item.header}</button>
-    <ul class="lists">
-      ${item.links
-        .map(
-          (link) =>
-            `<li>
-            <a>${link}</a>
-          </li>`
-        )
-        .join(" ")}
-    </ul>
-  </div>
+    <div>
+      <button class="footer-button" onclick="onClick(${index})">${
+      item.header
+    }<i class="bx bx-chevron-down" id="chevron"></i></button>
+      <ul class="lists">
+        ${item.links
+          .map(
+            (link) =>
+              `<li>
+                <a href="">${link}</a>
+              </li>`
+          )
+          .join(" ")}
+      </ul>
+    </div>
   `)
 );
 
@@ -72,3 +74,13 @@ footer.innerHTML += `
         Podia Labs, Inc. &copy; 2023 <a href="">Terms</a> <a href="">Privacy</a>
       </p>
 `;
+
+const button = document.getElementsByClassName("footer-button");
+
+function onClick(i) {
+  if (button[i].classList.contains("clicked")) {
+    button[i].classList.remove("clicked");
+  } else {
+    button[i].classList.add("clicked");
+  }
+}
