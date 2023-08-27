@@ -31,6 +31,39 @@ footers = [
     ],
   },
   {
+    header: "Compare",
+    links: [
+      "Kajabi",
+      "Teachable",
+      "Thinkific",
+      "Patreon",
+      "Gumroad",
+      "Podia alternatives",
+    ],
+  },
+  {
+    header: "Resources",
+    links: [
+      "Examples",
+      "Demo",
+      "Creator Stories",
+      "Blog",
+      "Free tools",
+      "All resources",
+    ],
+  },
+  {
+    header: "Podia",
+    links: [
+      "Jobs",
+      "About",
+      "Branding",
+      "Reviews",
+      "Refer-a-creator",
+      "Affiliates",
+    ],
+  },
+  {
     header: "Features",
     links: [
       "Online courses",

@@ -40,6 +40,15 @@ a {
   text-decoration: none;
 }
 
+p {
+  font-family: Inter;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -63,28 +72,32 @@ svg {
 /* end of css global initial resets */
 
 body > * {
-  padding: 0 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
+
+/* ?Header starts from here */
 
 header {
   display: flex;
   z-index: 88;
   align-items: center;
-  height: 10vh;
   background-color: var(--bg-color);
-  padding: 0 1rem;
+  padding: 1.5rem 1rem;
   position: sticky;
   top: 0;
   transition: box-shadow 200ms cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48rem) {
   body > * {
-    padding: 0 6rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 }
 
 header.active {
+  background: #fff;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 0.0555556rem 0px,
     rgba(0, 0, 0, 0.12) 0px 0.111111rem 0.222222rem;
   transition-duration: 400ms;
@@ -106,12 +119,20 @@ nav {
   }
 }
 
+/* ? Header ends here */
+
 main {
   flex: 1;
 }
 
+/* ? Start of Hero Section */
+
 section {
   margin: 2rem 0;
+}
+
+.hero {
+  font-family: Inter;
 }
 
 .hero-img {
@@ -122,7 +143,6 @@ section {
 
 .text-digital {
   color: #9c8881;
-  font-family: Inter;
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.2rem;
@@ -131,10 +151,10 @@ section {
 .section-header {
   margin: 1rem 0;
   font-size: 2.25rem;
+  font-family: var(--font-headline);
 }
 
 .section-paragraph {
-  font-family: Inter;
   line-height: 1.8;
   font-size: 1.2rem;
   color: #5c5856;
@@ -145,12 +165,9 @@ section {
   background-color: var(--button-bg);
   font-weight: bold;
   color: #fff;
-  font-family: Inter;
   font-size: 1.1rem;
   padding: 1rem 1.5rem;
   border-radius: 2rem;
-  border: none;
-  cursor: pointer;
 
   &:hover {
     background-color: #351e7a;
@@ -170,6 +187,10 @@ section {
   }
 }
 
+/* ?End of the Hero Section */
+
+/* ?Start of Podia Offers */
+
 .podia-offer {
   text-align: center;
   margin: 4rem 0.7rem;
@@ -187,7 +208,6 @@ section {
     line-height: 1.8;
     color: var(--paragraph-text-color);
     font-size: 1.2rem;
-    font-family: Inter;
   }
 }
 
@@ -198,6 +218,9 @@ section {
   }
 }
 
+/* ?End of the Podia Offers */
+
+/* ?Start of Podia Services */
 .podia-services {
   width: 100%;
   margin: 5rem 0;
@@ -253,6 +276,10 @@ section {
   }
 }
 
+/* ?End of Podia services */
+
+/* ?Start of What products can you sell on podia */
+
 .podia-sell {
   margin: 0 auto;
   text-align: center;
@@ -268,7 +295,6 @@ section {
     margin: 0 auto;
     color: var(--paragraph-text-color);
     font-size: 1.2rem;
-    font-family: Inter;
     line-height: 1.8;
   }
 }
@@ -278,6 +304,10 @@ section {
     max-width: 80%;
   }
 }
+
+/* ?End of What products can you sell on podia */
+
+/* ?Start of Online Courses or Digital Downloads Category */
 
 .online-courses {
   display: flex;
@@ -298,7 +328,6 @@ section {
 
   & .courses-desc {
     line-height: 1.8;
-    font-family: Inter;
     font-size: 1.2rem;
     color: var(--paragraph-text-color);
   }
@@ -353,7 +382,6 @@ section {
 
   & .feedback-subtext {
     text-align: center;
-    font-family: Inter;
     color: var(--paragraph-text-color);
   }
 }
@@ -363,6 +391,10 @@ section {
     max-width: 100%;
   }
 }
+
+/* ?End of Online Courses or Digital Downloads Category */
+
+/* ?Star of Join Podia */
 
 .join-podia {
   background-color: var(--dark-purple);
@@ -383,26 +415,27 @@ section {
 
   & p {
     color: #d7d2e8;
-    font-family: Inter;
     font-size: 1.1rem;
     line-height: 1.8;
   }
 
   & button {
-    border: none;
     padding: 1rem;
     border-radius: 2rem;
     font-weight: bold;
     font-family: Inter;
     color: #fff;
     background-color: var(--light-purple);
-    cursor: pointer;
 
     &:hover {
       background-color: var(--button-bg);
     }
   }
 }
+
+/* ?End of Join Podia */
+
+/* ?Start of Footer */
 
 footer {
   padding-top: 6rem;
@@ -420,13 +453,11 @@ footer {
   & button {
     display: flex;
     align-items: center;
-    border: none;
     background: none;
     font-family: var(--font-headline);
     font-size: 1.2rem;
-    font-family: Inter;
+    font-family: inherit;
     font-weight: bold;
-    cursor: pointer;
   }
 
   & i {
@@ -511,8 +542,10 @@ footer {
       flex-direction: column;
 
       & li:last-child {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
       }
     }
   }
 }
+
+/* ?End of Footer */
