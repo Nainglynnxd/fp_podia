@@ -68,6 +68,7 @@ body > * {
 
 header {
   display: flex;
+  z-index: 88;
   align-items: center;
   height: 10vh;
   background-color: var(--bg-color);
@@ -153,6 +154,19 @@ section {
 
   &:hover {
     background-color: #351e7a;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .hero {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  & .hero-img {
+    margin: 0;
   }
 }
 
