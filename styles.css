@@ -162,7 +162,6 @@ section {
   max-width: 100%;
 
   & h2 {
-    /* max-width: 80%; */
     margin: 0 auto;
     font-size: 2.125rem;
     font-family: var(--font-headline);
@@ -170,7 +169,6 @@ section {
   }
 
   & p {
-    /* max-width: 80%; */
     margin: 0 auto;
     line-height: 1.8;
     color: var(--paragraph-text-color);
@@ -468,6 +466,7 @@ footer {
       justify-content: space-between;
       width: 100%;
       font-family: tiempos;
+      color: unset;
     }
 
     & div:not(:last-child) {

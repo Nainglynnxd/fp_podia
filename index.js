@@ -51,22 +51,19 @@ const footer = document.getElementById("footer");
 footers.map(
   (item, index) =>
     (footer.innerHTML += `
-    <div>
-      <button class="footer-button" onclick="onClick(${index})">${
-      item.header
-    }<i class="bx bx-chevron-down" id="chevron"></i></button>
-      <ul class="lists">
-        ${item.links
-          .map(
-            (link) =>
-              `<li>
-                <a href="">${link}</a>
-              </li>`
-          )
-          .join(" ")}
-      </ul>
-    </div>
-    <ul class="list-dropdown">
+      <div>
+        <button class="footer-button" onclick="onClick(${index})">
+          ${item.header}<i class="bx bx-chevron-down" id="chevron"></i>
+        </button>
+        ${renderLinks(item, "lists")}
+      </div>
+      ${renderLinks(item, "list-dropdown")}
+    `)
+);
+
+function renderLinks(item, className) {
+  return `
+    <ul class=${className}>
       ${item.links
         .map(
           (link) =>
@@ -76,13 +73,13 @@ footers.map(
         )
         .join(" ")}
     </ul>
-  `)
-);
+  `;
+}
 
 footer.innerHTML += `
-      <p class="terms">
-        Podia Labs, Inc. &copy; 2023 <a href="">Terms</a> <a href="">Privacy</a>
-      </p>
+  <p class="terms">
+    Podia Labs, Inc. &copy; 2023 <a href="">Terms</a> <a href="">Privacy</a>
+  </p>
 `;
 
 const button = document.getElementsByClassName("footer-button");
